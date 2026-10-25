@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #6750A4;
+  --color-primary-hover: #57418F;
+  --color-lavender: #F3EEFF;
+  --color-bg: #FFFFFF;
+  --color-text: #252238;
+  --color-text-secondary: #686579;
+  --color-border: #E7E3EF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  body {
+    @apply bg-clinic-bg text-clinic-text antialiased;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    @apply outline-none ring-2 ring-clinic-primary ring-offset-2;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .badge-lavender {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-clinic-lavender text-clinic-primary border border-clinic-border/60;
+  }
+
+  .card-clinic {
+    @apply bg-white rounded-2xl border border-clinic-border shadow-soft-sm transition-all duration-200 hover:shadow-soft-md hover:border-clinic-primary/30;
+  }
+}
